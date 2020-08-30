@@ -7,11 +7,16 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+  <h1>Remote Music Lessons International</h1>
   <nav>
     <img src="/images/mong.png">
     <a href="/">Home</a>
     <!--<a href="/flights/new">ADD FLIGHT</a>
     <a href="/flights">ALL FLIGHTS</a>-->
+    <% if (user) { %>
+      <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+    <% } else { %>
+      <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+    <% } %>
   </nav>
   <main>
-<h1>Remote Music Lessons International</h1>
