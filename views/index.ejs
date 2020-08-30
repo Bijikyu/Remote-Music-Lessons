@@ -2,19 +2,23 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/landing.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <ul class="right">
-      <li>
-      <% if (user) { %>
-        <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-      <% } else { %>
-        <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-      <% } %>
-      </li>
-    </ul>
+      <div>
+        <h1>Remote Music Lessons International</h1>
+        <p>Take remote vocal and instrument lessons any time you want</p>
+        <button class="CTA">Log In With Google</button>
+        <button>Learn More</button>
+      </div>
+      <br>
+      <p>Learn any instrument or how to sing</p>
+      <p>Learn music in any genre or style</p>
+      <p>Have the lessons from the comfort and safety of your own home</p>
+      <p>Schedule your music lesson anytime according to your schedule</p>
+      <p>Schedule your lesson for as long as you want</p>
+      <p>Our instructors come from diverse backgrounds and trainings</p>
   </body>
 </html>
+
+<%- include('./partials/footer') %>

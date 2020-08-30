@@ -2,7 +2,8 @@ const mongoose = require('mongoose'); //require database
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({ 
-    property1: String, //TODO: assign properties and include OAuth string
+    name: String,
+    email: String,
     googleId: String
 }, { 
     timestamps: true 
