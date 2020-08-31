@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<body>
+    <br>
+    <button onclick="location.href='/sessions/new'" type='button' class='btn'>Reserve a Lesson</button>
+    <% sessions.forEach(function(i) { %>
+        <ul>
+             <li><%= i.subject %></li>
+             <li><%= i.when %></li>
+             <li><%= i.duration %></li>
+             <li><%= i.instructor %></li>
+             <li><a href="/sessions/<%= i._id %>">View Details</a></li>
+        </ul>
+    <% }); %>
+</body>
+
+<%- include('../partials/footer') %>

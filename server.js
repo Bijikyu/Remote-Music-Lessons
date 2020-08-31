@@ -10,9 +10,10 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 var passport = require('passport');
 
-
+//REQUIRE ROUTERS
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
+const sessionsRouter = require('./routes/sessions');
 
 var app = express();
 
@@ -45,8 +46,10 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+//MOUNT ROUTERS
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/sessions', sessionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

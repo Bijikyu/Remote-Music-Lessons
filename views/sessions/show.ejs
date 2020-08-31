@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<br>
+<h3>Lesson Detail View</h3>
+
+<section>
+    <div> <b>Subject:</b>&nbsp <%= session.subject %> </div>
+    <div> <b>Time/Date:</b>&nbsp <%= session.when.toLocaleString() %> </div>
+    <div> <b>Duration:</b>&nbsp <%= session.duration %> min</div>
+    <div> <b>Instructor:</b>&nbsp <%= session.instructor %></div>
+    <div><b>Special Instructions & Requests:</b></div>
+    <div><%= session.specialInstructions %></div>
+    <!--<div>Destinations: </div>
+    <% //session.destinations.forEach(dest => { %>
+    <div><%= //dest.airport %> <%= //dest.arrival %></div>
+    <% //}) %>-->
+    <br>
+    <button onclick="location.href='/sessions/<%= session.id %>/edit'" type='button' class='btn'>Update Lesson</button>
+    <br>
+    <br>
+    <form action="/sessions/<%= session.id %>?_method=DELETE"
+        class="delete-form" method="POST"> 
+        <button type="submit">Cancel Lesson</button> 
+   </form>
+</section> 
+
+<%- include('../partials/footer') %>

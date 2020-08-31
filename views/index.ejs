@@ -7,8 +7,12 @@
   <body>
       <div>
         <h1>Remote Music Lessons International</h1>
-        <p>Take remote vocal and instrument lessons any time you want</p>
-        <button class="CTA">Log In With Google</button>
+        <p>Remote vocal & instrument lessons, any time, any where</p>
+        <% if (user) { %>
+          <button onclick="location.href='/logout'" type='button' class='CTA'><i class='material-icons'></i>Log Out</button>
+        <% } else { %>
+          <button onclick="location.href='/auth/google'" type='button' class="CTA"><i class="material-icons"></i>Login with Google</button>
+        <% } %>
         <button>Learn More</button>
       </div>
       <br>

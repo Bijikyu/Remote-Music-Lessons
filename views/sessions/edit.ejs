@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<form action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+    <label>What do you want to learn instead?</label>
+    <select name="subject">
+        <option value="Singing/Vocals">Singing/Vocals</option>
+        <option value="French Horn">French Horn</option>
+        <option value="Trombone">Trombone</option>
+        <option value="Trumpet/Cornet">Trumpet/Cornet</option>
+        <option value="Saxophone">Saxophone</option>
+        <option value="Tuba">Tuba</option>
+        <option value="Baritone/Euphonium">Baritone/Euphonium</option>
+        <option value="Oboe">Oboe</option>
+        <option value="Flute">Flute</option>
+        <option value="Clarinet">Clarinet</option>
+        <option value="Bassoon">Bassoon</option>
+        <option value="Piccolo">Piccolo</option>
+        <option value="Piano/Keyboard">Piano/Keyboard</option>
+        <option value="Recorder">Recorder</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Violin">Violin</option>
+        <option value="Cello">Cello</option>
+        <option value="Drums">Drums</option>
+    </select>
+    <!--<input type="text" name="subject">-->
+    <label for="session time">Lesson Time/Date:</label>
+    <input type="datetime-local" id="session-time"
+    name="when" >
+    <label>Duration:</label>
+    <input type="text" name="duration">
+    <label>Other Requests/Information:</label>
+    <input type="text" name="specialInstructions">
+    <button type="submit">Update Session</button>
+  </form>
+
+<%- include('../partials/footer') %>

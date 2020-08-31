@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
-//functions here
+// code here
 
 module.exports = {
-     //function names to export
+     //functions here
 };
