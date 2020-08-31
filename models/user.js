@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({ 
     name: String,
     email: String,
-    googleId: String
+    googleId: String,
+    instructor: {
+        type: Boolean,
+        default: false
+    }
 }, { 
     timestamps: true 
 });

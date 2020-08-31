@@ -40,8 +40,9 @@ function show(req, res) {
 }
 
 function update(req, res) {
-    Session.update(req.params.id, req.body);
-    res.redirect(`/sessions/${req.params.id}`); 
+    Session.findByIdAndUpdate(req.params.id, req.body, function(err, session){
+        res.redirect(`/sessions/${req.params.id}`); 
+    });
 }
 
 module.exports = {
