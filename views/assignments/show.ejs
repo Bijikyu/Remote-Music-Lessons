@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<br>
+<h3>Assignment Detail View</h3>
+
+<section>
+    <h2> <%= assignment.title %> </h2>
+    <div><b>Assignment Instructions:&nbsp</b><%= assignment.text%></div>
+    <div><b>Completed:&nbsp</b><%= assignment.complete === true ? 'Yes' : 'No' %></div>
+    <div><b>Link:&nbsp</b><a href="<%= assignment.link %>"><%= assignment.link %></a></div>
+    <div><b>Instructor:&nbsp</b><%= assignment.instructor %></div>
+    <br>
+    <button onclick="location.href='/assignments/<%= assignment.id %>/edit'" type='button' class='btn'>Update Assignment</button>
+    <br>
+    <br>
+    <form action="/assignments/<%= assignment.id %>?_method=DELETE"
+        class="delete-form" method="POST"> 
+        <button type="submit">Delete Assignment</button> 
+   </form>
+</section> 
+
+<%- include('../partials/footer') %>

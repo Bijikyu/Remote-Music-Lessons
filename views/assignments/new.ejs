@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/assignments" method="POST">
+    <label><b>Title:</b></label>
+    <input type="text" name="title">
+    <label>Lesson Instructions:</label>
+    <input type="text" name="text">
+    <label>Link:</label>
+    <input type="text" name="link">
+    <input type="submit" value="Add Assignment">
+</form>
+
+<%- include('../partials/footer') %>

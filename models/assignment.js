@@ -5,7 +5,10 @@ const assignmentSchema = new Schema({
     title: String,
     text: String, 
     link: String,
-    complete: Boolean,
+    complete: {
+        type: Boolean,
+        default: false
+    },
     instructor: {
         type: String,
         default: "Pat"

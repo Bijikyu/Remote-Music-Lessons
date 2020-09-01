@@ -3,13 +3,20 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema({ 
     subject: String, 
-    when: Date,
+    when: {
+        type: Date,
+        required: true
+    },
     duration: Number, 
     instructor: {
         type: String, //TODO Change to objectId after instructor schema/model
-        default: 'TBD'
+        default: 'Patrick'
     },  
-    specialInstructions: String 
+    specialInstructions: String,
+    assignments: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Assignment'
+    }] 
 }, { 
     timestamps: true 
 });

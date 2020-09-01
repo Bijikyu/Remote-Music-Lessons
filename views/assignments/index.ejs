@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<br>
+<button onclick="location.href='/assignments/new'" type='button' class='btn'>Create an Assignment</button>
+<% assignments.forEach(function(i) { %>
+    <ul>
+            <h3><%= i.title %></h3>
+            <li><b>Assignment Instructions:&nbsp</b><%= i.text %></li>
+            <li><b>Completed:&nbsp</b><%= i.complete === true ? 'Yes' : 'No' %></li>
+            <li><b>Link:&nbsp</b><a href="<%= i.link %>"><%= i.link %></a></li>
+            <li><b>Instructor:&nbsp</b><%= i.instructor %></li>
+            <li><a href="/assignments/<%= i._id %>">View Details</a></li>
+    </ul>
+<% }); %>
+
+<%- include('../partials/footer') %>
