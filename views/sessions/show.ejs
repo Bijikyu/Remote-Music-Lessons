@@ -9,10 +9,15 @@
     <div> <b>Instructor:</b>&nbsp <%= session.instructor %></div>
     <div><b>Special Instructions & Requests:</b></div>
     <div><%= session.specialInstructions %></div>
-    <!--<div>Destinations: </div>
-    <% //session.destinations.forEach(dest => { %>
-    <div><%= //dest.airport %> <%= //dest.arrival %></div>
-    <% //}) %>-->
+
+    <div><b>Assignments:</b> </div>
+    <% session.assignments.forEach(asn => { %>
+    <div><%= asn.title %> <%= asn.complete %></div>
+    <div><%= asn.instructor %></div>
+    <div><%= asn.text %></div>
+    <div><%= asn.link %></div>
+    <% }) %>
+
     <br>
     <button onclick="location.href='/sessions/<%= session.id %>/edit'" type='button' class='btn'>Update Lesson</button>
     <br>

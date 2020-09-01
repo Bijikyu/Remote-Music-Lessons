@@ -30,6 +30,12 @@
     <input type="text" name="duration">
     <label>Other Requests/Information:</label>
     <input type="text" name="specialInstructions">
+    <label>Attach Assignment</label>
+    <select name="assignments">
+        <% assignments.forEach(function(i){ %>
+        <select value="<%=i._id%>"><%= i.title %></select>
+        <% }) %>
+    </select>
     <button type="submit">Update Session</button>
   </form>
 

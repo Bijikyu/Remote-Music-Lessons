@@ -1,6 +1,7 @@
 const Assignment = require('../models/assignment');
 
 function create(req, res){ 
+    req.body.createdBy = req.user._id;
     Assignment.create(req.body, function(err) {
         if (err) return res.redirect('/assignments/new');
         res.redirect('/assignments');
@@ -8,15 +9,25 @@ function create(req, res){
 }
 
 function deleteAssignment(req, res) { 
-    Assignment.findByIdAndDelete(req.params.id, function(err){
+    if (!assignment.createdBy.equals(req.user._id)){
+        res.redirect('/assignments');
+    } 
+    else {
+        Assignment.findByIdAndDelete(req.params.id, function(err){
         res.redirect('/assignments'); 
-    }); 
+        }); 
+    }
 }
 
 function edit(req, res) {
     Assignment.findById(req.params.id, function(err, assignment){
-        if (err) return res.redirect('/assignments');
-        res.render('assignments/edit', { assignment });
+        if(!assignment.createdBy.equals(req.user._id)){
+            return res.redirect('/assignments');
+        }
+        else {        
+            if (err) return res.redirect('/assignments');
+            res.render('assignments/edit', { assignment });
+        }
     });
 }
 
