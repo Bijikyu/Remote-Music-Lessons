@@ -2,22 +2,33 @@ const Session = require('../models/session');
 
 
 function create(req, res){ 
+    Session.createdBy = req.user._id;
     Session.create(req.body, function(err) {
         if (err) return res.redirect('/sessions/new');
         res.redirect('/sessions');
     }); 
 }
 
-function deleteSession(req, res) { 
-    Session.findByIdAndDelete(req.params.id, function(err){
-        res.redirect('/sessions'); 
-    }); 
-}
+function deleteSession(req, res) {
+    if (!Session.createdBy.equals(req.user._id)){
+        res.redirect('/sessions');
+    } 
+    else {
+        Session.findByIdAndDelete(req.params.id, function(err){
+            res.redirect('/sessions'); 
+        });
+    }
+} 
 
 function edit(req, res) {
     Session.findById(req.params.id, function(err, session){
-        if (err) return res.redirect('/sessions');
-        res.render('sessions/edit', { session });
+        if(!Session.createdBy.equals(req.user._id)){
+            return res.redirect('/sessions');
+        }
+        else {
+            if (err) return res.redirect('/sessions');
+            res.render('sessions/edit', { session });
+        }
     });
 }
 

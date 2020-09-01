@@ -16,7 +16,11 @@ const sessionSchema = new Schema({
     assignments: [{
         type: Schema.Types.ObjectId,
         ref: 'Assignment'
-    }] 
+    }],
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, { 
     timestamps: true 
 });

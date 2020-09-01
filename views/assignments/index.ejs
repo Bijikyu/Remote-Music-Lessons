@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 <br>
+<h1>Assignments List</h1>
 <button onclick="location.href='/assignments/new'" type='button' class='btn'>Create an Assignment</button>
 <% assignments.forEach(function(i) { %>
-    <ul>
+    <ul style="list-style-type:none">
             <h3><%= i.title %></h3>
             <li><b>Assignment Instructions:&nbsp</b><%= i.text %></li>
             <li><b>Completed:&nbsp</b><%= i.complete === true ? 'Yes' : 'No' %></li>
