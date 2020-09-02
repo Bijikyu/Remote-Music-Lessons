@@ -44,9 +44,14 @@ function edit(req, res) {
 }
 
 function index(req, res) {
-    Session.find({}, function(err, sessions) {
-        res.render('sessions/index', { sessions });
-    });
+    if(!req.user){
+        res.redirect('/');
+    }
+    else{
+        Session.find({}, function(err, sessions) {
+            res.render('sessions/index', { sessions });
+        });
+    }
 }
 
 function newSession(req,res){
