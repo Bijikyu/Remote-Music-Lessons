@@ -8,15 +8,17 @@ function create(req, res){
     }); 
 }
 
-function deleteAssignment(req, res) { 
-    if (!assignment.createdBy.equals(req.user._id)){
-        res.redirect('/assignments');
-    } 
-    else {
-        Assignment.findByIdAndDelete(req.params.id, function(err){
-        res.redirect('/assignments'); 
-        }); 
-    }
+function deleteAssignment(req, res) {
+    Assignment.findById(req.params.id, function(err, session) {
+        if (!assignment.createdBy.equals(req.user._id)){
+            res.redirect('/assignments');
+        }
+        else {
+            Assignment.findByIdAndDelete(req.params.id, function(err){
+                res.redirect('/assignments');
+            });
+        }
+    })
 }
 
 function edit(req, res) {

@@ -4,15 +4,16 @@
     <br>
     <h1>Session Subjects and Times</h1>
     <button onclick="location.href='/sessions/new'" type='button' class='btn'>Reserve a Lesson</button>
+    <br>
+    <br>
     <div class="row">
     <% sessions.forEach(function(i) { %>
-        <ul style="list-style-type:none">
-             <li><%= i.subject %></li>
-             <li><%= i.when.toLocaleString() %></li>
-             <li><%= i.duration %></li>
-             <li><%= i.instructor %></li>
-             <li><%= i.createdBy %></li>
-             <li><a href="/sessions/<%= i._id %>">View Details</a></li>
+        <ul class="ulStyle" style="list-style-type:none">
+             <li class="li"><b><%= i.subject %></b></li>
+             <li class="li"><%= i.when.toLocaleString() %></li>
+             <li class="li"><%= i.duration %> min</li>
+             <li class="li">Instructed by <%= i.instructor %></li>
+             <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
         </ul>
     <% }); %>
     </div>

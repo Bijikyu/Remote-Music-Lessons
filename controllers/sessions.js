@@ -9,15 +9,17 @@ function create(req, res){
 }
 
 function deleteSession(req, res) {
-    if (!session.createdBy.equals(req.user._id)){
-        res.redirect('/sessions');
-    } 
-    else {
-        Session.findByIdAndDelete(req.params.id, function(err){
-            res.redirect('/sessions'); 
-        });
-    }
-} 
+    Session.findById(req.params.id, function(err, session) {
+        if (!session.createdBy.equals(req.user._id)){
+            res.redirect('/sessions');
+        }
+        else {
+            Session.findByIdAndDelete(req.params.id, function(err){
+                res.redirect('/sessions');
+            });
+        }
+    })
+}
 
 function edit(req, res) {
     Session.findById(req.params.id)
@@ -27,7 +29,7 @@ function edit(req, res) {
         }
         else {
             if (err) return res.redirect('/sessions');
-            res.render('sessions/edit', { session, assignments });
+            res.render('sessions/edit', { session, assignments: session.assignments });
         }
     });
 }
