@@ -32,11 +32,8 @@
     <input type="text" name="specialInstructions">
     <label>Attach Assignment</label>
     <select name="assignments">
-        <%- assignments.map(i => 
-        `<option value='${i._id}'>${i.title}</option>`
-        ) %>
         <% assignments.forEach(function(i) { %>
-            <option value='<%=i._id%>'></option>><%= i.title %></option>
+            <option value='<%=i._id%>'><%= i.title %></option>
         <% }); %>
     </select>
     <button type="submit">Update Session</button>

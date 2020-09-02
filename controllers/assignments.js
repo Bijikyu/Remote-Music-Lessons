@@ -1,4 +1,5 @@
 const Assignment = require('../models/assignment');
+const Session = require('../models/session');
 
 function create(req, res){ 
     req.body.createdBy = req.user._id;

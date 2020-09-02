@@ -1,4 +1,5 @@
 const Session = require('../models/session');
+const Assignment = require('../models/assignment');
 
 function create(req, res){ 
     req.body.createdBy = req.user._id;
@@ -24,13 +25,21 @@ function deleteSession(req, res) {
 function edit(req, res) {
     Session.findById(req.params.id)
     .populate('assignments').exec(function(err, session){
-        if(!session.createdBy.equals(req.user._id)){
-            return res.redirect('/sessions');
-        }
-        else {
-            if (err) return res.redirect('/sessions');
-            res.render('sessions/edit', { session, assignments: session.assignments });
-        }
+        Assignment.find({_id: {$nin: session.assignments}})
+        .exec(function(err, assignments){
+            if (req.user) {
+            if(!session.createdBy.equals(req.user._id)){
+                return res.redirect('/sessions');
+            }
+            else {
+                if (err) return res.redirect('/sessions');
+                console.log(session);
+                res.render('sessions/edit', { session, assignments});
+            }
+            } else {
+                return res.redirect('/sessions');
+            }
+        })
     });
 }
 
@@ -45,7 +54,10 @@ function newSession(req,res){
 }
 
 function show(req, res) {
-    Session.findById(req.params.id, function(err, session){
+    Session.findById(req.params.id)
+    .populate('assignments')
+    .exec(
+    function(err, session){
         if (err) return res.redirect('/sessions');
         res.render('sessions/show', { session });
     });
