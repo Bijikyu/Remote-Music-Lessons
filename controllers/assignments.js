@@ -35,9 +35,14 @@ function edit(req, res) {
 }
 
 function index(req, res) {
-    Assignment.find({}, function(err, assignments) {
-        res.render('assignments/index', { assignments });
-    });
+    if(!req.user){
+        res.redirect('/');
+    }
+    else{
+        Assignment.find({}, function(err, assignments) {
+            res.render('assignments/index', { assignments });
+        });
+    }
 }
 
 function newAssignment(req,res){
