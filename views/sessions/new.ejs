@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 &nbsp
-<form id="new-form" action="/sessions" method="POST">
+<form class="form" id="new-form" action="/sessions" method="POST">
     <label>What do you want to learn?</label>
     <select name="subject">
+        <option value="---Please Choose from the Drop Down---">---Please Choose from the Drop Down---</option>
         <option value="Singing/Vocals">Singing/Vocals</option>
         <option value="French Horn">French Horn</option>
         <option value="Trombone">Trombone</option>
@@ -26,10 +27,10 @@
     <label for="session time">Lesson Time/Date:</label>
     <input type="datetime-local" id="session-time"
     name="when" >
-    <label>Duration:</label>
+    <label>Duration (minutes, minimum 30):</label>
     <input type="text" name="duration">
     <label>Other Requests/Information:</label>
-    <input type="text" name="specialInstructions">
+    <textarea cols='60' rows='20' name="specialInstructions"></textarea>
     <input type="submit" value="Add Session">
   </form>
 

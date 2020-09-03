@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 <br>
 <br>
-<form action="/assignments/<%= assignment.id %>?_method=PUT" method="POST" autocomplete="off">
+<form class='form' action="/assignments/<%= assignment.id %>?_method=PUT" method="POST" autocomplete="off">
     <label><b>Title:</b></label>
     <input type="text" name="title">
     <label>Lesson Instructions:</label>
-    <input type="text" name="text">
+    <textarea cols='60' rows='20' name="text"></textarea>
     <label>Link:</label>
     <input type="text" name="link">
     <button type="submit">Update Assignment</button>

@@ -2,13 +2,15 @@
 <br>
 <h1>Assignments List</h1>
 <button onclick="location.href='/assignments/new'" type='button' class='btn'>Create an Assignment</button>
-<div class='grid'>
+<div class='gridAssignments'>
     <% assignments.forEach(function(i) { %>
         <ul class='ulStyle' style="list-style-type:none">
                 <h3><%= i.title %></h3>
-                <li class='li'><b>Assignment Instructions:&nbsp</b><%= i.text %></li>
+                <li class='li'><b>Assignment Instructions:</b></li>
+                <li class='li'><%= i.text %></li>
                 <li class='li'><b>Completed:&nbsp</b><%= i.complete === true ? 'Yes' : 'No' %></li>
-                <li class='li'><b>Link:&nbsp</b><a href="<%= i.link %>"><%= i.link %></a></li>
+                <li class='li'><b>Links</b></li>
+                <li class='li'><a href="<%= i.link %>"><%= i.link %></a></li>
                 <li class='li'><b>Instructor:&nbsp</b><%= i.instructor %></li>
                 <li class='li'><a href="/assignments/<%= i._id %>">View Details</a></li>
         </ul>

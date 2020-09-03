@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 <br>
 <br>
-<form id="new-form" action="/assignments" method="POST">
+<form class='form' id="new-form" action="/assignments" method="POST">
     <label><b>Title:</b></label>
     <input type="text" name="title">
     <label>Lesson Instructions:</label>
-    <input type="text" name="text">
+    <textarea cols='60' rows='20' name="text"></textarea>
     <label>Link:</label>
     <input type="text" name="link">
     <input type="submit" value="Add Assignment">

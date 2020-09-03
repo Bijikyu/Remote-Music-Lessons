@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: #eb9a74e8;
+  color: #ebb474e8;
   text-shadow: none;
 }
 
@@ -21,7 +21,7 @@ a {
 #header {
   background: #2A1C15;
   color: white;
-  width: 115%;
+  width: 100%;
   position: relative;
 }
 
@@ -222,6 +222,16 @@ html[xmlns] #menu-bar {
   border: solid #2A1C15 1px;
 }
 
+.delBtn {
+  background: darkred;
+  font-size: 1vw;
+}
+
+.delBtn:hover {
+  background: red;
+  font-size: 1vw;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -230,9 +240,14 @@ html[xmlns] #menu-bar {
   text-align: center;
 }
 
-.grid{
+.gridSessions{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gridAssignments{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .ulStyle {
@@ -251,16 +266,28 @@ html[xmlns] #menu-bar {
   text-shadow: 2px 2px 3px #2A1C15;
 }
 
-
-
-
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  line-height: 30px;
+  padding: 1vh 1vw 1vh 1vw;
+  margin: 2.5vh 1vw 2vh 1vw;
+  background-color: #2A1C15;
+  color: white;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
 
 .footer{
   bottom: 0vh;
   margin-bottom: 0vh;
   background: #2A1C15;
   color: white;
-  width: 150%;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;

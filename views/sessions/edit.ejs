@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
-<form action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+<form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
     <label>What do you want to learn instead?</label>
     <select name="subject">
+        <option value="---Please Choose from the Drop Down---">---Please Choose from the Drop Down---</option>
         <option value="Singing/Vocals">Singing/Vocals</option>
         <option value="French Horn">French Horn</option>
         <option value="Trombone">Trombone</option>
@@ -26,12 +27,13 @@
     <label for="session time">Lesson Time/Date:</label>
     <input type="datetime-local" id="session-time"
     name="when" >
-    <label>Duration:</label>
+    <label>Duration (minutes, minimum 30):</label>
     <input type="text" name="duration">
     <label>Other Requests/Information:</label>
-    <input type="text" name="specialInstructions">
-    <label>Attach Assignment</label>
+    <textarea cols='60' rows='20' name="specialInstructions"></textarea>
+    <label>For Instructors: Attach Assignment</label>
     <select name="assignments">
+            <option value='<%= %>'><%= %></option>
         <% assignments.forEach(function(i) { %>
             <option value='<%=i._id%>'><%= i.title %></option>
         <% }); %>
