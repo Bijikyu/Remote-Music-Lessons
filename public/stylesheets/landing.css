@@ -5,7 +5,7 @@ body {
   background-image:url('https://imgur.com/1S2kq1m.gif');
   background-repeat: no-repeat;
   background-color: #a55b39;
-  background-size: 105vw;
+  background-size: 100%;
   width: 100%;
   color: #fff;
   overflow-x: hidden;
@@ -161,7 +161,7 @@ h1 {
   margin-bottom: 0vh;
   background: #2A1C15;
   color: white;
-  width: 150%;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
