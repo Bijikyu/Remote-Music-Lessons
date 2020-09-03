@@ -10,7 +10,7 @@ function create(req, res){
 }
 
 function deleteAssignment(req, res) {
-    Assignment.findById(req.params.id, function(err, session) {
+    Assignment.findById(req.params.id, function(err, assignment) {
         if (!assignment.createdBy.equals(req.user._id)){
             res.redirect('/assignments');
         }

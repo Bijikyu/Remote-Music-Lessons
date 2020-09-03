@@ -12,6 +12,10 @@ const assignmentSchema = new Schema({
     instructor: {
         type: String,
         default: "Pat"
+    },
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, { 
     timestamps: true 

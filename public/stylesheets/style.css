@@ -3,6 +3,7 @@ body {
   margin: 0vh;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -225,12 +226,18 @@ html[xmlns] #menu-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .ulStyle {
   padding: 2% 0% 2% 0%;
-  margin: 0% 2% 0% 1%;
+  margin: 2% 2% 2% 2%;
   border-radius: 25px;
   background: linear-gradient(145deg, #943a10, #7c310e);
   box-shadow:  5px 2px 9px #2A1C15, 
