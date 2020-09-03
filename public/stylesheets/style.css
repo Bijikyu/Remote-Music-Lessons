@@ -309,7 +309,8 @@ html[xmlns] #menu-bar {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-size: 2vw;
   line-height: 10px;
   padding: 0 1vw 0 1vw;
-  margin: 0 1vw 0 1vw;
+  margin: 0 2vw 0 2vw;
 }
