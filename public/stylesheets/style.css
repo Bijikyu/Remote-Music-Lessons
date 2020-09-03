@@ -56,19 +56,6 @@ a {
 
 
 
-.footer{
-  bottom: 0vh;
-  margin-bottom: 0vh;
-  background: #2A1C15;
-  color: white;
-  width: 115%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-}
 
 /* Nav Bar */
 
@@ -217,7 +204,7 @@ a {
 #menu-bar {
   display: inline-block;
 }
-  html[xmlns] #menu-bar {
+html[xmlns] #menu-bar {
   display: block;
 }
 * html #menu-bar {
@@ -236,15 +223,22 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 15px 1px 15px 10px;
-  margin: 1px 1px 0px 0%;
+  padding: 15px 0px 15px 0px;
+  margin: 1px 0vw 0px 0vw;
 }
 
 .footlogo {
-  width: 15vw;
-  max-width: 50px;
+  width: 50px;
   height: auto;
   padding: 0 0 0 0;
   margin: 0 5vw 0 5vw;
+}
+
+#footerText {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 6px;
 }
