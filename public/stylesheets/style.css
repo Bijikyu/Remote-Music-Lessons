@@ -2,11 +2,19 @@ body {
   padding: 0vh;
   margin: 0vh;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
   color: #eb9a74e8;
   text-shadow: none;
+}
+
+#logo {
+  width: 10vw;
+  max-width: 150px;
+  height: auto;
+  margin-top: 4vh;
 }
 
 #header {
@@ -48,13 +56,16 @@ a {
 
 
 
-#footer{
+.footer{
   bottom: 0vh;
   margin-bottom: 0vh;
   background: #2A1C15;
   color: white;
   width: 115%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 10px;
 }
@@ -214,3 +225,26 @@ a {
 }
 
 /* End Nav Bar */
+
+.footer{
+  bottom: 0vh;
+  margin-bottom: 0vh;
+  background: #2A1C15;
+  color: white;
+  width: 150%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  padding: 15px 1px 15px 10px;
+  margin: 1px 1px 0px 0%;
+}
+
+.footlogo {
+  width: 15vw;
+  max-width: 50px;
+  height: auto;
+  padding: 0 0 0 0;
+  margin: 0 5vw 0 5vw;
+}

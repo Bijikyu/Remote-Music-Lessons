@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Remote Music Lessons</title>
     <link rel='stylesheet' href='/stylesheets/landing.css' />
   </head>
   <body>
-      <div>
-        <h1>Remote Music Lessons International</h1>
-        <p>Remote vocal & instrument lessons, any time, any where</p>
-        <% if (user) { %>
-          <button onclick="location.href='/logout'" type='button' class='CTA'><i class='material-icons'></i>Log Out</button>
+    <div id='ctrCTA'>
+      <h1>Remote Music Lessons International</h1>
+      &nbsp
+      <p id='tagline'>Remote vocal & instrument lessons, any time, anywhere</p>
+      <button class='btn' type="button" onclick="location.href='#sellIt'">Learn More</button>
+      <% if (user) { %>
+        <button onclick="location.href='/logout'" type='button' class='CTA btn'><i class='material-icons'></i>Log Out</button>
         <% } else { %>
-          <button onclick="location.href='/auth/google'" type='button' class="CTA"><i class="material-icons"></i>Login with Google</button>
-        <% } %>
-        <button>Learn More</button>
-      </div>
+          <button onclick="location.href='/auth/google'" type='button' class="CTA btn"><i class="material-icons"></i>Login with Google</button>
+          <% } %>
+        </div>
+        <img id="logo" src="https://imgur.com/35y6zPd.png"> 
       <br>
-      <p>Learn any instrument or how to sing</p>
-      <p>Learn music in any genre or style</p>
-      <p>Have the lessons from the comfort and safety of your own home</p>
-      <p>Schedule your music lesson anytime according to your schedule</p>
-      <p>Schedule your lesson for as long as you want</p>
-      <p>Our instructors come from diverse backgrounds and trainings</p>
+      <div id="sellIt">
+        <div class='sellPt'>
+          <img class='sellImg' src="https://imgur.com/fkNOS3i.png"> 
+          <p class='sellItm'>Learn any instrument, or how to sing</p>
+          <img class='sellImg' src="https://imgur.com/92uk9C4.png"> 
+        </div>
+        <div class='sellPt'>
+          <img class='sellImg' src="https://imgur.com/ZIKWlU8.png"> 
+          <p class='sellItm'>Instructors come from diverse background trainings & genres</p>
+          <img class='sellImg' src="https://imgur.com/H7R3Kni.png"> 
+        </div>
+        <div class='sellPt'>
+          <img class='sellImg' src="https://imgur.com/UqZOOPQ.png"> 
+          <p class='sellItm'>Have the lessons from the comfort and safety of your own home</p>
+          <img class='sellImg' src="https://imgur.com/KArA5ve.png"> 
+        </div>
+        <div class='sellPt'>
+          <img class='sellImg' src="https://imgur.com/DkgHZUx.png"> 
+          <p class='sellItm'>Schedule your music lesson anytime, for as long as you want*</p>
+          <img class='sellImg' src="https://imgur.com/kaRXzpC.png"> 
+        </div>
+        <p id='caveat'>*Allow 48 hours to be assigned an instructor, and have them teach up to 8 hours a day.</p>
+        <% if (user) { %>
+          <button onclick="location.href='/logout'" type='button' id='btmCTA' class='CTA btn'><i class='material-icons'></i>Log Out</button>
+        <% } else { %>
+          <button onclick="location.href='/auth/google'" type='button' id='btmCTA' class="CTA btn"><i class="material-icons"></i>Login with Google</button>
+        <% } %>
+      </div>
   </body>
 </html>
 
