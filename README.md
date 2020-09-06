@@ -14,6 +14,9 @@ Getting started is simple, with Google's OAuth you just sign in with your Google
 
 If you wish to be an instructor, sign up as a student, then reach out to me at one of my listed emails so we can discuss your experience. If everything is kosher, I'll send you a link to turn on your instructor status.
 
+**Dev**
+[Trello](https://trello.com/b/i206FzLj/remote-music-lessons-international)
+
 **Next Steps:**
 * Instructor status toggle
 * Instructor user override
