@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 const usersCtrl = require('../controllers/users')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.redirect('/sessions');
-});
+router.get('/', usersCtrl.index);
+router.get('/toggle', usersCtrl.toggle);
+router.put('/:id', usersCtrl.update);
+router.get('/:id', usersCtrl.show);
 
 module.exports = router;

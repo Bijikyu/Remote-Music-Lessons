@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<br>
+<h1>Instructors</h1>
+<br>
+<div class="gridSessions">
+    <% users.forEach(function(user) { %>
+        <% if (user.instructor === true) { %>
+        <ul class="ulStyle" style="list-style-type:none">
+                <li class="li"><b><%= user.name %></b></li>
+                <li class="li"><%= user.email %></li>
+                <li class="li"><a href="/users/<%= user._id %>">View Details</a></li>
+        </ul>
+        <% } %>
+    <% }); %>
+  
+</div>
+<h1>Students</h1>
+<br>
+<div class="gridSessions">
+    <% users.forEach(function(user) { %>
+        <% if (user.instructor === false) { %>
+        <ul class="ulStyle" style="list-style-type:none">
+                <li class="li"><b><%= user.name %></b></li>
+                <li class="li"><%= user.email %></li>
+                <li class="li"><a href="/users/<%= user._id %>">View Details</a></li>
+        </ul>
+        <% } %>
+    <% }); %>
+</div>
+
+<a href="/users/toggle">Toggle Your Instructor Status</a>
+
+<%- include('../partials/footer') %>

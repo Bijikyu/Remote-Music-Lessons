@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<form class='form' action="/instructors/toggle/<%= user._id %>?_method=PUT" method="POST" autocomplete="off">
+    <label>I am an Intructor</label>
+    <input type='text' name='instructor'>
+    <button type="submit">Submit Status Change</button>
+</form>
+
+<%- include('../partials/footer') %>
