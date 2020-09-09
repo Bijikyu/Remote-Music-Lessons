@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<div>
+        <% if (user) { %>
+        <ul style="list-style-type:none">
+                <li><b><%= user.name %></b></li>
+                <li><%= user.email %></li>
+        </ul>
+        <% } %>
+</div>
+    
+<%- include('../partials/footer') %>

@@ -11,7 +11,7 @@ const session = require('express-session');
 var passport = require('passport');
 
 //REQUIRE ROUTERS
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const sessionsRouter = require('./routes/sessions');
 const assignmentsRouter = require('./routes/assignments');
