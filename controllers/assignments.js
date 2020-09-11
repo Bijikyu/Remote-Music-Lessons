@@ -3,6 +3,7 @@ const Session = require('../models/session');
 
 function create(req, res){ 
     req.body.createdBy = req.user._id;
+    req.body.instructor = req.user.name;
     Assignment.create(req.body, function(err) {
         if (err) return res.redirect('/assignments/new');
         res.redirect('/assignments');

@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+
+<form action="/users/<%= user.id %>?_method=PUT" method="POST" autocomplete="off"> 
+    <input type="checkbox" name="instructor" checked>
+    <button type="submit">Update Instructor/Student Status</button>
+</form>
+
+<%- include('../partials/footer') %>

@@ -1,5 +1,22 @@
 const User = require('../models/user');
 
+function edit(req,res) {
+    if(!req.user){
+        res.redirect('/');
+    }
+    else {
+        User.findById(req.params.id, function(err, user){
+            if (!user._id.equals(req.user._id)){
+                return res.redirect('/users');
+            }
+            else {
+                if (err) return res.redirect('/sessions');
+                res.render('users/edit', { user });
+            }    
+        });
+    }
+}
+
 function index(req, res) {
     if(!req.user){
         res.redirect('/');  
@@ -11,19 +28,6 @@ function index(req, res) {
     }
 }
 
-/*
-function index(req, res) {
-    if(!req.user){
-        res.redirect('/');  
-    }
-    else {
-        User.find({instructor: false}, function(err, users) { //change to true after it all works
-            res.render('users/index', { users });
-        });
-    }
-}
-*/
-
 function show(req, res) {
     User.findById(req.params.id, function(err, user){
         if (err) return res.redirect('/sessions');
@@ -31,24 +35,17 @@ function show(req, res) {
     });
 }
 
-
-function toggle(req,res) {
-    if(!req.user){
-        res.redirect('/');
-    }
-    else {
-        res.render('users/toggle');
-    }
-}
-
 function update(req, res) {
-    User.update(req.params.id, req.body);
-    res.redirect('users');
+    req.body.instructor = !!req.body.instructor;
+    User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+        res.redirect('/users');
+    }
+    );
 }
 
 module.exports = {
     index,
     show,
-    toggle,
+    edit,
     update
 };

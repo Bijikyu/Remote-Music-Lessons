@@ -5,6 +5,7 @@
         <ul style="list-style-type:none">
                 <li><b><%= user.name %></b></li>
                 <li><%= user.email %></li>
+                <a href="/users/<%= user.id %>/edit"">Toggle your Student/Instructor Status</a>
         </ul>
         <% } %>
 </div>
