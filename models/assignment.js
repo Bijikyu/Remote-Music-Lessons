@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const assignmentSchema = new Schema({ 
     title: String,
     text: String, 
-    link: String,
+    link: [],
     complete: {
         type: Boolean,
         default: false

@@ -56,7 +56,12 @@ function index(req, res) {
 }
 
 function newSession(req,res){
-    res.render('sessions/new');
+    if(!req.user){
+        res.redirect('/');
+    }
+    else {
+        res.render('sessions/new');
+    }  
 }
 
 function show(req, res) {

@@ -10,7 +10,9 @@
                 <li class='li'><%= i.text %></li>
                 <li class='li'><b>Completed:&nbsp</b><%= i.complete === true ? 'Yes' : 'No' %></li>
                 <li class='li'><b>Links</b></li>
-                <li class='li'><a href="<%= i.link %>"><%= i.link %></a></li>
+                <% i.link.forEach(function(l,idx) { %>
+                    <li class='li'><a href="<%= i.link[idx] %>"><%= i.link[idx] %></a></li>
+                <% }) %>
                 <li class='li'><b>Instructor:&nbsp</b><%= i.instructor %></li>
                 <li class='li'><a href="/assignments/<%= i._id %>">View Details</a></li>
         </ul>
