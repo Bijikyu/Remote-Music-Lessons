@@ -3,6 +3,7 @@ const Assignment = require('../models/assignment');
 
 function create(req, res){ 
     req.body.createdBy = req.user._id;
+    req.body.student = req.user.name;
     Session.create(req.body, function(err) {
         if (err) return res.redirect('/sessions/new');
         res.redirect('/sessions');
@@ -11,7 +12,7 @@ function create(req, res){
 
 function deleteSession(req, res) {
     Session.findById(req.params.id, function(err, session) {
-        if (!session.createdBy.equals(req.user._id)){
+        if (!session.createdBy.equals(req.user._id) && req.user.instructor === false){
             res.redirect('/sessions');
         }
         else {
@@ -28,7 +29,7 @@ function edit(req, res) {
         Assignment.find({_id: {$nin: session.assignments}})
         .exec(function(err, assignments){
             if (req.user) {
-            if(!session.createdBy.equals(req.user._id)){
+            if(!session.createdBy.equals(req.user._id) && req.user.instructor === false){
                 return res.redirect('/sessions');
             }
             else {

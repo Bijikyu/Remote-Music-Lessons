@@ -251,7 +251,7 @@ html[xmlns] #menu-bar {
 }
 
 .ulStyle {
-  padding: 2% 0% 2% 0%;
+  padding: 2% 5vw 9% 5vw;
   margin: 2% 2% 2% 2%;
   border-radius: 25px;
   background: linear-gradient(145deg, #943a10, #7c310e);
@@ -261,7 +261,7 @@ html[xmlns] #menu-bar {
 
 .li {
   padding: 3% 5% 0% 5%;
-  margin: 0% 1% 0% 0%;
+  margin: 0% 5% 0% 5%;
   color: white;
   text-shadow: 2px 2px 3px #2A1C15;
 }

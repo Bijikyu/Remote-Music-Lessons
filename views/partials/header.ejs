@@ -13,7 +13,9 @@
     <nav>
       <ul id="menu-bar">
         <li><a href="/sessions">Sessions</a></li>
+        <% if (user.instructor === true) { %>
         <li><a href="/assignments">Assignments</a></li>
+        <% } %>
         <% if (user) { %>
         <li><a href="/logout"><i class="material-icons"></i>Log Out</a></li>
         <% } else { %>

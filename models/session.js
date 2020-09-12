@@ -2,7 +2,8 @@ const mongoose = require('mongoose'); //require database
 const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema({ 
-    subject: String, 
+    subject: String,
+    student: String, 
     when: {
         type: Date,
         required: true
@@ -10,7 +11,7 @@ const sessionSchema = new Schema({
     duration: Number, 
     instructor: {
         type: String, //TODO Change to objectId after instructor schema/model
-        default: 'Patrick'
+        default: 'TBD'
     },  
     specialInstructions: String,
     assignments: [{

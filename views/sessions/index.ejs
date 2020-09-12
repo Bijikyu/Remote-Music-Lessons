@@ -9,10 +9,16 @@
     <div class="gridSessions">
         <% sessions.forEach(function(i) { %>
             <ul class="ulStyle" style="list-style-type:none">
-                    <li class="li"><b><%= i.subject %></b></li>
-                    <li class="li"><%= i.when.toLocaleString() %></li>
-                    <li class="li"><%= i.duration %> min</li>
-                    <li class="li">Instructed by <%= i.instructor %></li>
+                    <li class="li"><h3><u><%= i.subject %></u></h3></li>
+                    <li class="li"><u>Student</u></li>
+                    <li class="li"><%= i.student %></li>
+                    <br>
+                    <li class="li"><u>Date & Time</u></li>
+                    <li class="li"><small><%= i.when.toLocaleString() %></small></li>
+                    <li class="li"><small><%= i.duration %> minutes</small></li>
+                    <br>
+                    <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
+                    <br>
                     <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
             </ul>
         <% }); %>
