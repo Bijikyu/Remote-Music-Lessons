@@ -29,14 +29,14 @@ function edit(req, res) {
         Assignment.find({_id: {$nin: session.assignments}})
         .exec(function(err, assignments){
             if (req.user) {
-            if(!session.createdBy.equals(req.user._id) && req.user.instructor === false){
-                return res.redirect('/sessions');
-            }
-            else {
-                if (err) return res.redirect('/sessions');
-                console.log(session);
-                res.render('sessions/edit', { session, assignments});
-            }
+                if(!session.createdBy.equals(req.user._id) && req.user.instructor === false){
+                    return res.redirect('/sessions');
+                }
+                else {
+                    if (err) return res.redirect('/sessions');
+                    console.log(session);
+                    res.render('sessions/edit', { session, assignments});
+                }
             } else {
                 return res.redirect('/sessions');
             }
@@ -75,6 +75,7 @@ function show(req, res) {
 }
 
 function update(req, res) {
+    if (req.user.instructor === true) req.body.instructor = req.user.name;
     Session.findByIdAndUpdate(req.params.id, req.body, function(err, session){
         res.redirect(`/sessions/${req.params.id}`); 
     });

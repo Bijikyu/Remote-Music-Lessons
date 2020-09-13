@@ -1,44 +1,52 @@
 <%- include('../partials/header') %>
 
-<form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
-    <label>What do you want to learn instead?</label>
-    <select name="subject">
-        <option value="---Please Choose from the Drop Down---">---Please Choose from the Drop Down---</option>
-        <option value="Singing/Vocals">Singing/Vocals</option>
-        <option value="French Horn">French Horn</option>
-        <option value="Trombone">Trombone</option>
-        <option value="Trumpet/Cornet">Trumpet/Cornet</option>
-        <option value="Saxophone">Saxophone</option>
-        <option value="Tuba">Tuba</option>
-        <option value="Baritone/Euphonium">Baritone/Euphonium</option>
-        <option value="Oboe">Oboe</option>
-        <option value="Flute">Flute</option>
-        <option value="Clarinet">Clarinet</option>
-        <option value="Bassoon">Bassoon</option>
-        <option value="Piccolo">Piccolo</option>
-        <option value="Piano/Keyboard">Piano/Keyboard</option>
-        <option value="Recorder">Recorder</option>
-        <option value="Guitar">Guitar</option>
-        <option value="Violin">Violin</option>
-        <option value="Cello">Cello</option>
-        <option value="Drums">Drums</option>
-    </select>
-    <!--<input type="text" name="subject">-->
-    <label for="session time">Lesson Time/Date:</label>
-    <input type="datetime-local" id="session-time"
-    name="when" >
-    <label>Duration (minutes, minimum 30):</label>
-    <input type="text" name="duration">
-    <label>Other Requests/Information:</label>
-    <textarea cols='60' rows='20' name="specialInstructions"></textarea>
-    <label>For Instructors: Attach Assignment</label>
-    <select name="assignments">
-            <option value='<%= %>'><%= %></option>
-        <% assignments.forEach(function(i) { %>
-            <option value='<%=i._id%>'><%= i.title %></option>
-        <% }); %>
-    </select>
-    <button type="submit">Update Session</button>
-  </form>
+<div>
+    <form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+        <% if (user.instructor === false){ %>
+        <label>What do you want to learn instead?</label>
+        <select id="sub" name="subject">
+            <option value="<%=session.subject%>"><%=session.subject%></option>
+            <option value="Singing/Vocals">Singing/Vocals</option>
+            <option value="French Horn">French Horn</option>
+            <option value="Trombone">Trombone</option>
+            <option value="Trumpet/Cornet">Trumpet/Cornet</option>
+            <option value="Saxophone">Saxophone</option>
+            <option value="Tuba">Tuba</option>
+            <option value="Baritone/Euphonium">Baritone/Euphonium</option>
+            <option value="Oboe">Oboe</option>
+            <option value="Flute">Flute</option>
+            <option value="Clarinet">Clarinet</option>
+            <option value="Bassoon">Bassoon</option>
+            <option value="Piccolo">Piccolo</option>
+            <option value="Piano/Keyboard">Piano/Keyboard</option>
+            <option value="Recorder">Recorder</option>
+            <option value="Guitar">Guitar</option>
+            <option value="Violin">Violin</option>
+            <option value="Cello">Cello</option>
+            <option value="Drums">Drums</option>
+        </select>
+        <!--<input type="text" name="subject">-->
+        <label>Duration</label>
+        <label>(minutes, minimum 30 min):</label>
+        <input type="text" name="duration" value="<%=session.duration%>">
+        <label>Other Requests/Information:</label>
+        <textarea cols='60' rows='20' name="specialInstructions"><%=session.specialInstructions%></textarea>
+        <% } %>
+        <% if (user.instructor === true){ %>
+            <h3>For Instructors:</h3>
+            <label>Attach Assignment</label>
+            <select name="assignments">
+                    <option value='-Choose from this Drop Down-'>-Choose from this Drop Down-</option>
+                <% assignments.forEach(function(i) { %>
+                    <option value='<%=i._id%>'><%= i.title %></option>
+                <% }); %>
+            </select>
+        <% } %>
+    
+        <button type="submit">Update Session</button>
+      </form>
+</div>
+
+  <p>test</p>
 
 <%- include('../partials/footer') %>

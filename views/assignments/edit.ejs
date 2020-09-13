@@ -3,9 +3,9 @@
 <br>
 <form class='form' action="/assignments/<%= assignment.id %>?_method=PUT" method="POST" autocomplete="off">
     <label><b>Title:</b></label>
-    <input type="text" name="title">
+    <input type="text" name="title" value="<%=assignment.title%>">
     <label>Lesson Instructions:</label>
-    <textarea cols='60' rows='20' name="text"></textarea>
+    <textarea cols='60' rows='20' name="text"><%=assignment.text%></textarea>
     <label>Link:</label>
     <input type="text" name="link">
     <button type="submit">Update Assignment</button>
