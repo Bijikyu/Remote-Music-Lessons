@@ -2,20 +2,27 @@
 <br>
 <h3>Lesson Detail View</h3>
 
-<section>
-    <div> <b>Subject:</b>&nbsp <%= session.subject %> </div>
+<section class="sectStyle">
+    <div class="itm"> <h3>Subject:&nbsp <%= session.subject %></h3> </div>
     <div> <b>Time/Date:</b>&nbsp <%= session.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %> </div>
     <div> <b>Duration:</b>&nbsp <%= session.duration %> min</div>
     <div> <b>Instructor:</b>&nbsp <%= session.instructor %></div>
     <div><b>Special Instructions & Requests:</b></div>
     <div><%= session.specialInstructions %></div>
 
-    <div><b>Assignments:</b> </div>
+    <div class="itm"><h3>Assignments</h3> </div>
     <% session.assignments.forEach(asn => { %>
-    <div><%= asn.title %> <%= asn.complete %></div>
-    <div><%= asn.instructor %></div>
+    <div><h4><%= asn.title %></h4></div>
+    <div>Complete:&nbsp
+        <% if (asn.complete === true) { %></div>
+            <%= 'Yes' %></div> 
+        <% } else { %>
+            <%= 'No'%></div>
+        <% } %>
+        <br>
     <div><%= asn.text %></div>
-    <div><%= asn.link %></div>
+    <br>
+    <a href="<%= asn.link %>"><%= asn.link %></a>
     <% }) %>
 
     <br>

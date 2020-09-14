@@ -266,6 +266,22 @@ html[xmlns] #menu-bar {
   text-shadow: 2px 2px 3px #2A1C15;
 }
 
+.sectStyle {
+  padding: 2% 5vw 9% 5vw;
+  margin: 2% 2% 2% 2%;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #888888, #7e7c7bf3);
+  box-shadow:  5px 2px 9px #2A1C15, 
+               0px 0px 0px #963b10;
+}
+
+.itm {
+  padding: 3% 5% 0% 5%;
+  margin: 0% 5% 0% 5%;
+  color: white;
+  text-shadow: 2px 2px 3px #2A1C15;
+}
+
 .form{
   display: flex;
   flex-direction: column;
