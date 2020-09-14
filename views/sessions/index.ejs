@@ -3,7 +3,7 @@
 <body>
     <br>
     <h1>Session Subjects and Times</h1>
-    <button onclick="location.href='/sessions/new'" type='button' class='btn'>Reserve a Lesson</button>
+    <button onclick="location.href='/sessions/new'" type='button' class='btn'>Schedule a Lesson</button>
     <br>
     <br>
     <div class="gridSessions">
@@ -14,7 +14,7 @@
                     <li class="li"><%= i.student %></li>
                     <br>
                     <li class="li"><u>Date & Time</u></li>
-                    <li class="li"><small><%= i.when.toLocaleString() %></small></li>
+                    <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
                     <li class="li"><small><%= i.duration %> minutes</small></li>
                     <br>
                     <li class="li">Instructed by:&nbsp <%= i.instructor %></li>

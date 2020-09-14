@@ -314,3 +314,27 @@ html[xmlns] #menu-bar {
   padding: 0 1vw 0 1vw;
   margin: 0 2vw 0 2vw;
 }
+
+@media (min-width: 700px) {
+  .gridSessions{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .gridAssignments{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gridSessions{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  .gridAssignments{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

@@ -4,7 +4,7 @@
 
 <section>
     <div> <b>Subject:</b>&nbsp <%= session.subject %> </div>
-    <div> <b>Time/Date:</b>&nbsp <%= session.when.toLocaleString() %> </div>
+    <div> <b>Time/Date:</b>&nbsp <%= session.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %> </div>
     <div> <b>Duration:</b>&nbsp <%= session.duration %> min</div>
     <div> <b>Instructor:</b>&nbsp <%= session.instructor %></div>
     <div><b>Special Instructions & Requests:</b></div>

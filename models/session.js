@@ -12,7 +12,7 @@ const sessionSchema = new Schema({
     duration: Number, 
     instructor: {
         type: String, //TODO Change to objectId after instructor schema/model
-        default: 'To Be Determined'
+        default: 'To be determined'
     },  
     specialInstructions: String,
     assignments: [{

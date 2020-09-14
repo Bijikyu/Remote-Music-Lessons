@@ -6,10 +6,10 @@
     <label>What do you want to learn?</label>
     <select name="subject">
         <option value="---Please Choose from the Drop Down---">---Please Choose from the Drop Down---</option>
-        <option value="Singing/Vocals">Singing/Vocals</option>
+        <option value="Singing">Singing</option>
         <option value="French Horn">French Horn</option>
         <option value="Trombone">Trombone</option>
-        <option value="Trumpet/Cornet">Trumpet/Cornet</option>
+        <option value="Trumpet">Trumpet</option>
         <option value="Saxophone">Saxophone</option>
         <option value="Tuba">Tuba</option>
         <option value="Baritone/Euphonium">Baritone/Euphonium</option>
@@ -18,7 +18,7 @@
         <option value="Clarinet">Clarinet</option>
         <option value="Bassoon">Bassoon</option>
         <option value="Piccolo">Piccolo</option>
-        <option value="Piano/Keyboard">Piano/Keyboard</option>
+        <option value="Piano/Keyboard">Piano</option>
         <option value="Recorder">Recorder</option>
         <option value="Guitar">Guitar</option>
         <option value="Violin">Violin</option>
@@ -33,6 +33,16 @@
     <input type="text" name="duration">
     <label>Other Requests/Information:</label>
     <textarea cols='60' rows='20' name="specialInstructions"></textarea>
+
+    <% if (user.instructor === true){ %>
+      <label>Assign Student</label>
+        <select name="createdBy">
+          <% student.forEach(function(i) { %>
+            <option value='<%=i._id%>'><%= i.name %></option>
+          <% }); %>
+        </select>
+    <% } %>
+
     <input type="submit" value="Add Session">
   </form>
 
