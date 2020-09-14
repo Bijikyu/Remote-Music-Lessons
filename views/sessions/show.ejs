@@ -22,7 +22,9 @@
         <br>
     <div><%= asn.text %></div>
     <br>
-    <a href="<%= asn.link %>"><%= asn.link %></a>
+        <% asn.link.forEach(function(l,idx) { %>
+            <li class='li'><a href="<%= asn.link[idx] %>"><%= asn.link[idx] %></a></li>
+        <% }) %>
     <% }) %>
 
     <br>
