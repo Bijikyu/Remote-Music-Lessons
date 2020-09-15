@@ -292,9 +292,10 @@ html[xmlns] #menu-bar {
   display: flex;
   flex-direction: column;
   align-items: left;
-  line-height: 30px;
-  padding: 1vh 1vw 1vh 1vw;
-  margin: 2.5vh 1vw 2vh 1vw;
+  line-height: 1.1vh;
+  font-size: 2vw;
+  padding: 2vh 3vw 2vh 3vw;
+  margin: 3vh 3vw 3vh 3vw;
   background-color: #2A1C15;
   color: white;
   width: 30vw;
