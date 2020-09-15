@@ -21,7 +21,7 @@
                             <li class="li"><%= i.student %></li>
                             <br>
                             <li class="li"><u>Date & Time</u></li>
-                            <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                            <li class="li"><small><%= i.when.toLocaleString([],{month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'}) %></small></li>
                             <li class="li"><small><%= i.duration %> minutes</small></li>
                             <br>
                             <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
@@ -38,7 +38,7 @@
                             <li class="li"><%= i.student %></li>
                             <br>
                             <li class="li"><u>Date & Time</u></li>
-                            <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                            <li class="li"><small><%= i.when.toLocaleString([],{month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'}) %></small></li>
                             <li class="li"><small><%= i.duration %> minutes</small></li>
                             <br>
                             <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
@@ -61,7 +61,7 @@
                         <li class="li"><%= i.student %></li>
                         <br>
                         <li class="li"><u>Date & Time</u></li>
-                        <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                        <li class="li"><small><%= i.when.toLocaleString([],{month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'}) %></small></li>
                         <li class="li"><small><%= i.duration %> minutes</small></li>
                         <br>
                         <li class="li">Instructed by:&nbsp <%= i.instructor %></li>

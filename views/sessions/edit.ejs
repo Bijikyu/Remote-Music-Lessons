@@ -4,6 +4,7 @@
     <form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
         <% if (user.instructor === false){ %>
         <label>What do you want to learn instead?</label>
+        <br>
         <select id="sub" name="subject">
             <option value="<%=session.subject%>"><%=session.subject%></option>
             <option value="Singing/Vocals">Singing/Vocals</option>
@@ -26,15 +27,20 @@
             <option value="Drums">Drums</option>
         </select>
         <!--<input type="text" name="subject">-->
+        <br>
         <label>Duration</label>
-        <label>(minutes, minimum 30 min):</label>
+        <label><small><small>(minutes, minimum 30 min)</small></small></label>
         <input type="text" name="duration" value="<%=session.duration%>">
+        <br>
         <label>Other Requests/Information:</label>
+        <br>
         <textarea cols='60' rows='20' name="specialInstructions"><%=session.specialInstructions%></textarea>
         <% } %>
         <% if (user.instructor === true){ %>
-            <h3>For Instructors:</h3>
+            <br>
             <label>Attach Assignment</label>
+            <br>
+            <br>
             <select name="assignments">
                     <option value='-Choose from this Drop Down-'>-Choose from this Drop Down-</option>
                 <% assignments.forEach(function(i) { %>
@@ -42,11 +48,20 @@
                 <% }); %>
             </select>
         <% } %>
-    
+        <br>
         <button type="submit">Update Session</button>
       </form>
-</div>
+      
+      <% if (user.instructor === true){ %>
+        <form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+        <label for="session time">Lesson Time/Date</label>
+        <br>
+        <input type="datetime-local" id="session-time" name="when" >
+        <br>
+        <button type="submit">Update Date/Time</button>
+        </form>
+    <% } %>
 
-  <p>test</p>
+</div>
 
 <%- include('../partials/footer') %>
