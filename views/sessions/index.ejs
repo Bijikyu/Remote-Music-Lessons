@@ -2,26 +2,79 @@
 
 <body>
     <br>
-    <h1>Session Subjects and Times</h1>
     <button onclick="location.href='/sessions/new'" type='button' class='btn'>Schedule a Lesson</button>
     <br>
+    <% if (user.instructor === false) { %>
+        <p>Your scheduled sessions appear below.</p>
+    <% } else { %>
+        <h2>Student Requests (unassigned)</h2>
+        <p>Students that have requested sessions, but who have not yet been assigned to an instructors appear below. If you can teach the subject they are requesting, assign an Assignment to have them assigned to you.</p>
+    <% } %>
     <br>
     <div class="gridSessions">
+        <!--Shows all students if student or unattended students if an instructor-->
+        <% if (user.instructor === false) { %>
+            <% sessions.forEach(function(i) { %>
+                    <ul class="ulStyle" style="list-style-type:none">
+                            <li class="li"><h3><u><%= i.subject %></u></h3></li>
+                            <li class="li"><u>Student</u></li>
+                            <li class="li"><%= i.student %></li>
+                            <br>
+                            <li class="li"><u>Date & Time</u></li>
+                            <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                            <li class="li"><small><%= i.duration %> minutes</small></li>
+                            <br>
+                            <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
+                            <br>
+                            <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
+                    </ul>
+            <% }); %>
+        <% } else { %>
+            <% sessions.forEach(function(i) { %>
+                <% if (i.instructor === 'To be determined') { %>
+                    <ul class="ulStyle" style="list-style-type:none">
+                            <li class="li"><h3><u><%= i.subject %></u></h3></li>
+                            <li class="li"><u>Student</u></li>
+                            <li class="li"><%= i.student %></li>
+                            <br>
+                            <li class="li"><u>Date & Time</u></li>
+                            <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                            <li class="li"><small><%= i.duration %> minutes</small></li>
+                            <br>
+                            <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
+                            <br>
+                            <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
+                    </ul>
+                <% } else {''}%>
+            <% }); %>
+        <% } %>
+    </div>
+<!--Shows all sessions belonging to instructor-->
+    <% if (user.instructor === true) { %>
+    <h2> Your Lesson Itinerary </h2>
+    <div class="gridSessions">
         <% sessions.forEach(function(i) { %>
-            <ul class="ulStyle" style="list-style-type:none">
-                    <li class="li"><h3><u><%= i.subject %></u></h3></li>
-                    <li class="li"><u>Student</u></li>
-                    <li class="li"><%= i.student %></li>
-                    <br>
-                    <li class="li"><u>Date & Time</u></li>
-                    <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
-                    <li class="li"><small><%= i.duration %> minutes</small></li>
-                    <br>
-                    <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
-                    <br>
-                    <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
-            </ul>
-        <% }); %>
+            <% if (i.instructor === user.name || user.name === 'Brian Quezada') { %>
+                    <ul class="ulStyle" style="list-style-type:none">
+                        <li class="li"><h3><u><%= i.subject %></u></h3></li>
+                        <li class="li"><u>Student</u></li>
+                        <li class="li"><%= i.student %></li>
+                        <br>
+                        <li class="li"><u>Date & Time</u></li>
+                        <li class="li"><small><%= i.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %></small></li>
+                        <li class="li"><small><%= i.duration %> minutes</small></li>
+                        <br>
+                        <li class="li">Instructed by:&nbsp <%= i.instructor %></li>
+                        <br>
+                        <li class="li"><a href="/sessions/<%= i._id %>">View Details</a></li>
+                    </ul>
+                <% } else { %>
+                    <p></p>
+                <% } %>
+            <% }); %>
+        <% } else { %>
+            <p></p>
+        <% } %>
     </div>
 </body>
 

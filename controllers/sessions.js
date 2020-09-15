@@ -25,24 +25,6 @@ function create(req, res){
     }; 
 }
 
-/*
-function create(req, res){ 
-    if (req.user.instructor === false) {
-        req.body.createdBy = req.user._id;
-        req.body.student = req.user.name;
-    } else {
-        User.findById(req.body.createdBy)
-        .populate('users').exec(function(err, user){
-            req.body.student = user.name;
-        })
-    }
-    Session.create(req.body, function(err) {
-        if (err) return res.redirect('/sessions/new');
-        res.redirect('/sessions');
-    }); 
-}
-*/
-
 function deleteSession(req, res) {
     Session.findById(req.params.id, function(err, session) {
         if (!session.createdBy.equals(req.user._id) && req.user.instructor === false){

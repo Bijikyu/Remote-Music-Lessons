@@ -224,7 +224,7 @@ html[xmlns] #menu-bar {
 
 .delBtn {
   background: darkred;
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 
 .delBtn:hover {
@@ -242,7 +242,7 @@ html[xmlns] #menu-bar {
 
 .gridSessions{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .gridAssignments{
@@ -264,6 +264,7 @@ html[xmlns] #menu-bar {
   margin: 0% 5% 0% 5%;
   color: white;
   text-shadow: 2px 2px 3px #2A1C15;
+  list-style-type: none
 }
 
 .sectStyle {
@@ -280,6 +281,11 @@ html[xmlns] #menu-bar {
   margin: 0% 5% 0% 5%;
   color: white;
   text-shadow: 2px 2px 3px #2A1C15;
+  list-style-type: none
+}
+
+.notBullet {
+  list-style-type: none
 }
 
 .form{

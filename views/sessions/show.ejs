@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <br>
-<h3>Lesson Detail View</h3>
+<h3>Lesson, Detailed View</h3>
 
 <section class="sectStyle">
     <div class="itm"> <h3>Subject:&nbsp <%= session.subject %></h3> </div>
@@ -22,10 +22,12 @@
         <br>
     <div><%= asn.text %></div>
     <br>
+    
         <% asn.link.forEach(function(l,idx) { %>
-            <li class='li'><a href="<%= asn.link[idx] %>"><%= asn.link[idx] %></a></li>
+            <li class='itm'><a href="<%= asn.link[idx] %>"><%= asn.link[idx] %></a></li>
         <% }) %>
     <% }) %>
+    
 
     <br>
     <button onclick="location.href='/sessions/<%= session.id %>/edit'" type='button' class='btn'>Update Lesson</button>

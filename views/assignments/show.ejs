@@ -1,12 +1,22 @@
 <%- include('../partials/header') %>
 <br>
-<h3>Assignment Detail View</h3>
+<h3>Assignment, Detailed View</h3>
 
-<section>
-    <h2> <%= assignment.title %> </h2>
-    <div><b>Assignment Instructions:&nbsp</b><%= assignment.text%></div>
+<section class="sectStyle">
+    <h2 class="itm"> <%= assignment.title %> </h2>
+    <br>
+    <div><b>Assignment Instructions</b></div>
+    <br>
+    <div><%= assignment.text%></div>
+    <br>
     <div><b>Completed:&nbsp</b><%= assignment.complete === true ? 'Yes' : 'No' %></div>
-    <div><b>Link:&nbsp</b><a href="<%= assignment.link %>"><%= assignment.link %></a></div>
+    <br>
+    <div><b>Links</a></div>
+        <br>
+        <% assignment.link.forEach(function(l,idx) { %>
+        <li class='notBullet'><a href="<%= assignment.link[idx] %>"><%= assignment.link[idx] %></a></li>
+    <% }) %>
+    <br>
     <div><b>Instructor:&nbsp</b><%= assignment.instructor %></div>
     <br>
     <button onclick="location.href='/assignments/<%= assignment.id %>/edit'" type='button' class='btn'>Update Assignment</button>
