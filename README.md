@@ -8,8 +8,10 @@ This serves as primarily a teacher-student coordination and lesson plan tool, as
 ![Screenshot of Mobile View of Remote Music Lessons Landing Page](phone.png)
 </div>
 
-<image src='RM.gif'>
-<image src='RM.gif'>
+<div style="inline-block">
+    <image src='RM.gif'>
+    <image src='RM.gif'>
+</div>
 
 **Technologies Used:** Javascript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, Google OAuth, Paint.net.
 
