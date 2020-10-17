@@ -3,8 +3,8 @@ This CRUD web app enables music instructors to connect remotely with students fo
 
 This serves as primarily a teacher-student coordination and lesson plan tool, as well as a marketable platform. Other tools such as zoom, gmail and slack are used for the communication of the lessons.
 
-![Screenshot of Desktop View of Remote Music Lessons Landing Page](https://imgur.com/sCkzeX1.jpg)
-![Screenshot of Mobile View of Remote Music Lessons Landing Page](https://imgur.com/33LJmqu.jpg)
+![Screenshot of Desktop View of Remote Music Lessons Landing Page](RM.gif)
+![Screenshot of Mobile View of Remote Music Lessons Landing Page](phone.png)
 
 **Technologies Used:** Javascript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, Google OAuth, Paint.net.
 
