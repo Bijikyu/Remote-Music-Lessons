@@ -18,10 +18,6 @@ If you wish to be an instructor, sign up as a student, then reach out to me at o
 [Trello](https://trello.com/b/i206FzLj/remote-music-lessons-international)
 
 **Next Steps:**
-* Instructor status toggle
-* Instructor user override
-* Privileged views
-* Multiple links per assignment
 * Search capability
 * Profile pages
 * Export data as csv
