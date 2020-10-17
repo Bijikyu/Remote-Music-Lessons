@@ -8,6 +8,8 @@ This serves as primarily a teacher-student coordination and lesson plan tool, as
 ![Screenshot of Mobile View of Remote Music Lessons Landing Page](phone.png)
 </div>
 
+<image src='RM.gif'>
+
 **Technologies Used:** Javascript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, Google OAuth, Paint.net.
 
 **Getting Started:** [Link to the App](https://remotemusiclessons.herokuapp.com/)
