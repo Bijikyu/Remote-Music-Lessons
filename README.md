@@ -3,8 +3,10 @@ This CRUD web app enables music instructors to connect remotely with students fo
 
 This serves as primarily a teacher-student coordination and lesson plan tool, as well as a marketable platform. Other tools such as zoom, gmail and slack are used for the communication of the lessons.
 
+<div style="inline-block">
 ![Screenshot of Desktop View of Remote Music Lessons Landing Page](RM.gif)
 ![Screenshot of Mobile View of Remote Music Lessons Landing Page](phone.png)
+</div>
 
 **Technologies Used:** Javascript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, Google OAuth, Paint.net.
 
@@ -15,10 +17,7 @@ Getting started is simple, with Google's OAuth you just sign in with your Google
 If you wish to be an instructor, sign up as a student, then reach out to me at one of my listed emails so we can discuss your experience. If everything is kosher, I'll send you a link to turn on your instructor status.
 
 **Dev**
-<div>
 [Trello](https://trello.com/b/i206FzLj/remote-music-lessons-international)
-[Trello](https://trello.com/b/i206FzLj/remote-music-lessons-international)
-</div>
 
 **Next Steps:**
 * Search capability
