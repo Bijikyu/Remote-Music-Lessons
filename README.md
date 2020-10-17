@@ -9,6 +9,7 @@ This serves as primarily a teacher-student coordination and lesson plan tool, as
 </div>
 
 <image src='RM.gif'>
+<image src='RM.gif'>
 
 **Technologies Used:** Javascript, HTML, CSS, NodeJS, Express, MongoDB, Mongoose, Google OAuth, Paint.net.
 
